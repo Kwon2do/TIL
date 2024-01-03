@@ -9,11 +9,12 @@ body {
     flex-direction: row;
     justify-content: center;
     text-align: center;
+    margin-top: 50px;
 }
 
 .intro {
-    margin-top: 40px;
-    margin-left: 10px;
+    margin-top: 10px;
+    margin-left: 500px;
 }
 
 .input_text {
@@ -24,8 +25,19 @@ body {
     text-align: center;
     padding : 1rem;
 }
-
+.button_start {
+    background-color:#0a0a23;
+    color: #fff;
+    width: 100px;
+    height: 30px;
+}
+.button_end {
+    background: color rgb(80,0,0);
+    color:#0a0a23;
+    width: 100px;
+    height: 30px;
+} 
 .hint_text {
     width: 300px;
-    height: 400px;
+    height: 200px;
 }
