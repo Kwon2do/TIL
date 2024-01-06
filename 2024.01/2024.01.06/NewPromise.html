@@ -1,0 +1,77 @@
+<script>
+    //성공,실패 여부를 알려주는 콜백함수를 꼭 넣어줘야함.
+    var job1 = new Promise(function(resolve, reject){
+        //성공을 알림. 'resolved'는 처리한 결과를 설명
+        resolve('resolved ok'); 
+    });
+    //then은 처리된 결과 data를 받는 인자가 필요
+    job1.then(function(data){
+            console.log('data', data);
+    })
+
+
+   //------------------------------------------------------------------
+
+    var job1 = new Promise(function(resolve, reject){
+        setTimeout(function(){
+            resolve('resolved ok'); 
+        },2000);
+
+    });
+    //then은 처리된 결과 data를 받는 인자가 필요
+    job1.then(function(data){
+            console.log('data', data);
+    })
+
+
+   //------------------------------------------------------------------
+
+   function job1() { 
+   return new Promise(function(resolve, reject){
+        setTimeout(function(){
+            reject('문제가 발생했습니다.'); 
+        },2000);
+    });
+}
+   function job2() { 
+   return new Promise(function(resolve, reject){
+        setTimeout(function(){
+            resolve('job2 ok'); 
+        },2000);
+    });
+}
+//Nested Promise 방식
+    job1().then(function(data){
+            console.log('data', data);
+            job2().then(function(data) {
+                    console.log('data', data);
+            })
+    })
+
+//chaining 방식(선호)
+job1()
+.then(function(data){
+    console.log('data1', data);
+    return job2(); //job2().then(function(data)말고 아예 job2를 리턴해버리는 것
+})
+.catch(function(reason){
+    console.log(reason);
+    return Promise.reject('이유설명'); //에러가 뜨면서 뒤 코드 더이상 실행X
+})
+.then(function(data){
+    console.log('data2', data);
+});
+
+//------------------------------------------------------------------
+//마지막까지 완료하고 나서
+Promise.all([timer(1000), timer(2000), timer(3000)]).then(function(result){
+    console.log('result', result);
+    console.timeEnd('Promise.all');
+});
+//------------------------------------------------------------------
+//가장 빨리 끝난
+Promise.race([timer(1000), timer(2000), timer(3000)]).then(function(result){
+    console.log('result', result);
+    console.timeEnd('Promise.race');
+});
+</script>

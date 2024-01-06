@@ -1,0 +1,44 @@
+<script>
+/* Call Back 지옥!!
+timer(1000, function(){
+	console.log("작업");
+	timer(1000, function(){
+		console.log("작업");
+		timer(1000, function(){
+			console.log("작업");
+		});
+	});
+});
+*/
+//--------------------------------------------------------------------------
+/* promise를 사용한다면!?
+timer(1000)
+.then(function(){
+    console.log("작업");
+    return timer(1000);
+})
+.then(function(){ //then을 이어서 쓰면, 위 콜백 함수가 완료되면 여기를 실행
+    console.log("작업");
+    return timer(1000);
+})
+.then(function(){
+    console.log("작업");
+    return timer(1000);
+})
+*/
+//----------------------------------------------------------------------------
+/*async와 await
+async run() {
+    await timer(1000)
+    
+    console.log("작업");
+    await timer(1000)
+    
+    console.log("작업");
+    await timer(1000)
+
+    console.log("작업");
+}
+run();
+*/
+</script>

@@ -1,0 +1,25 @@
+<script>
+//집안일 예시(세탁기,건조기,청소기,화장실)
+//세탁기 돌려놓고, 청소기, 화장실 청소 진행 + 세탁기 완료되면 건조기 작동
+function 세탁기() {
+    console.log("세탁을 시작합니다.");
+    return new Promise(function(resolve){
+        setTimeout(function() {
+            console.log("세탁이 완료되었습니다.");
+            resolve();
+        }, 3000);
+    })
+}
+function 건조기() {
+    console.log("건조기 작동");
+}
+function 청소기() {
+    console.log("청소기로 바닥 청소");
+}
+function 화장실() {
+    console.log("화장실 청소");
+}
+세탁기().then(function(){건조기();});
+청소기();
+화장실();
+</script>

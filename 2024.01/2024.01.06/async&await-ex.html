@@ -1,0 +1,57 @@
+<script>
+    /*Promise 이용
+    function timer(time) {
+        return new Promise(function(resolve){
+            setTimeout(function(){
+                resolve(time);
+            }, time);
+        });
+    }
+    timer(1000).then(function(time){
+        console.log('time:'+time);
+        return timer(time+1000);
+    }).then(function(time){
+        console.log('time:'+time);
+        return timer(time+1000);
+    }).then(function(time){
+        console.log('time:'+time);
+    })
+    */
+   //---------------------------------------------------------------------
+   //async&await 이용
+   function timer(time) {
+        return new Promise(function(resolve){
+            setTimeout(function(){
+                resolve(time);
+            }, time);
+        });
+    }
+   async function run() { //async를 붙이면 암시적으로 Promise를 리턴한다.
+   console.log("start");
+   var time = await timer(1000); 
+   //비동기적 코드임을 알려주기 위해 await 사용
+   //then안의 콜백의 첫 번째 파라미터를 이렇게 받아올 수 있다(혁신..)
+   console.log('time:'+time);
+   time = await timer(time+1000);
+   console.log('time:'+time);
+   time = await timer(time+1000);
+   console.log('time:'+time);
+   console.log('end');
+   }
+   /*출력결과 예상
+   console.log('parent start');
+   run();
+   console.log('parent end');
+   + console.log(run()); -> Promise가 출력 //promise니까 await을 또 붙일 수 있는 것
+   */
+  async function run2() {
+    console.log('parent start');
+    await run();
+    console.log('parent end');
+  }
+  //async로 안묶고 순서 지정
+  console.log('parent parent start');
+  run2().then(function(){
+    console.log('parent parent end');
+  });
+</script>
