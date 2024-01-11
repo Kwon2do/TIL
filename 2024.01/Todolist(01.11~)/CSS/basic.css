@@ -1,0 +1,74 @@
+html {
+    width: 1000px;
+}
+body {
+    background-color: #3b5998;
+}
+.header{
+    position: relative;
+    font-size:100px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    left:500px;
+}
+
+.todo {
+    margin-left: 100px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}   
+.todo_input{
+    border-radius: 10px;
+    color:skyblue;
+    font-weight: bold;
+    width:300px;
+    height: 50px;
+    text-align: center;
+}
+.todo_list{
+    padding:1em;
+    border-radius:30px;
+    margin-top: 20px;
+    width: 300px;
+    height: 400px;
+}
+
+.routine {
+    display:inline-block;
+    margin-left: 100px;
+    width:wrap;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.routine_input{   
+    border-radius: 10px;
+    color:skyblue;
+    font-weight: bold;
+    width:300px;
+    height: 50px;
+    text-align: center;
+}
+.routine_list{
+    padding:1em;
+    border-radius:30px;
+    display:inline-block;
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.component{
+    margin-top: 50px;
+    margin-left: 300px;
+    display:flex;
+    flex-direction: row;
+}
+
+.diary{
+    margin-top: 10px;
+    width:450px;
+    height:50px;
+}
