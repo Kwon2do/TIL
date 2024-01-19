@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>TEST</title>
+    <style>
+        .generation {
+            width: 170px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="generation">
+        <div class="number">000000</div>
+        <button class="send">인증번호 전송</button>
+    </div>
+    <script>
+        const number = document.querySelector(".number");
+        const button = document.querySelector(".send");
+        const fun = () => String(Math.round((Math.random()*1000000))).padStart(6,"0");
+        button.addEventListener("click", () => {
+            number.innerText = fun();
+            number.style.color = "#"+fun();
+        })
+
+    </script>
+</body>
+</html>

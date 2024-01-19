@@ -1,0 +1,28 @@
+body {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: 670px;
+    height: 960+px;
+}
+h2 {
+    color:#0068FF;
+}
+.join {
+    width: 470px;
+    height: 818px;
+    border-radius: 20px;
+    border : solid 1px #AACDFF;
+}
+.email,.name,.password {
+    width: 466px;
+    display:flex;
+    flex-direction: column;
+}
+.input_email,.input_name, .pw {
+    margin-top : 10px;
+    border-width: 0 0 1px;
+    border-color: #0068FF;
+    outline:none;
+}
