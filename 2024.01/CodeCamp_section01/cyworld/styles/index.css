@@ -80,7 +80,6 @@
 .left__body__header__gray {
     width: 148px;
     height: 133px;
-    background-color: gray;
 }
 
 .left__body__header__line {
@@ -169,7 +168,7 @@ iframe {
     border: none;
 }
 
-.navigation {
+.navigation { 
     width: 62px;
     height: 100px;
     display: flex;
