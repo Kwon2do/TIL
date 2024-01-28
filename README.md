@@ -12,22 +12,21 @@
 <h1>분류</h1>
 
 <ul>
-<li><h3>Side Project</h3>
+<li><h3>Project</h3>
 
-<h4><a href="https://github.com/Kwon2do/TIL/tree/main/Project/SideProject/Bulls%20and%20Cows/project">타이핑 게임(Typing Game)</a></h4>
-<h4><a href="https://github.com/Kwon2do/TIL/tree/main/Project/SideProject/Bulls%20and%20Cows/project">숫자야구게임(bulls and cows)</a></h4>
-<h4><a href="https://github.com/Kwon2do/TIL/tree/main/Project/SideProject/blank_test">빈칸 문제 생성기(blank test)</a></h4>
-<h4><a href="https://github.com/Kwon2do/TIL/tree/main/Project/SideProject/Todolist(01.11~01.12)">투두 리스트(To do List)</a></h4>
-<h4><a href="https://github.com/Kwon2do/TIL/tree/main/Project/SideProject/SignUp_final">회원가입 페이지</a></h4>
-<h4><a href="https://github.com/Kwon2do/TIL/tree/main/Project/SideProject/D-day">D-Day 계산기</a></h4>
-<h4><a href="https://github.com/Kwon2do/TIL/tree/main/Project/SideProject/Todolist(new%20version)">투두 리스트(To do List) New Version</a></h4>
+<h4><a href="https://github.com/Kwon2do/TIL/blob/main/Project/SideProject/TypingGame/TypingGame.md">타이핑 게임(Typing Game)</a></h4>
+<h4><a href="https://github.com/Kwon2do/TIL/blob/main/Project/SideProject/Bulls%20and%20Cows/project/%EA%B8%B0%EB%A1%9D/2024.01.03.md">숫자야구게임(bulls and cows)</a></h4>
+<h4><a href="https://github.com/Kwon2do/TIL/blob/main/Project/SideProject/blank_test/readme.md">빈칸 문제 생성기(blank test)</a></h4>
+<h4><a href="https://github.com/Kwon2do/TIL/blob/main/Project/SideProject/Todolist(01.11~01.12)/readme.md">투두 리스트(To do List)</a></h4>
+<h4><a href="https://github.com/Kwon2do/TIL/blob/main/Project/SideProject/SignUp_final/record/study.md">회원가입 페이지</a></h4>
+<h4><a href="https://github.com/Kwon2do/TIL/tree/main/Project/SideProject/D-day/readme.md">D-Day 계산기</a></h4>
+<h4><a href="https://github.com/Kwon2do/TIL/tree/main/Project/SideProject/Todolist(new%20version)/readme.md">투두 리스트(To do List) New Version</a></h4>
 <li><h3>JavaScript</h3>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/Object/object%26property.md">객체(리터럴)와 프로퍼티 생성,접근,삭제</a></h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/Object/obectMethod_for-of%26for-in.md">객체 메서드와 DNS, for-in, for-of </a></h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/Object/js_object_type_and_copy_concept.md">원시값과 객체비교 & 얕은 복사(Shallow Copy), 깊은 복사(Deep Copy)</a></h4>
 <h4><a href="
 https://github.com/Kwon2do/TIL/blob/main/JavaScript/Destructuring%20Assignment/study.md">구조분해할당과 Spread연산자(...)</a></h4>
-<h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/shallow-deep%20Copy/copy_rest-parameter_.md">중첩 객체에서의 깊은 복사 & Rest Parameter & 구조분해할당 활용</a></h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/shallow-deep%20Copy/copy_rest-parameter_.md">중첩 객체에서의 깊은 복사 & Rest Parameter & 구조분해할당 활용</a></h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/DOM/DOM%2C%20Methods-summary.md">객체 값으로 DOM 활용 & Attribute Method & Interval Method</a></h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/JSON_study/JSON%26XML.md">JSON 소개 & JavaScript에서의 사용</a></h4>
