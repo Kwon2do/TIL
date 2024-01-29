@@ -25,8 +25,7 @@
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/Object/object%26property.md">객체(리터럴)와 프로퍼티 생성,접근,삭제</a></h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/Object/obectMethod_for-of%26for-in.md">객체 메서드와 DNS, for-in, for-of </a></h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/Object/js_object_type_and_copy_concept.md">원시값과 객체비교 & 얕은 복사(Shallow Copy), 깊은 복사(Deep Copy)</a></h4>
-<h4><a href="
-https://github.com/Kwon2do/TIL/blob/main/JavaScript/Destructuring%20Assignment/study.md">구조분해할당과 Spread연산자(...)</a></h4>
+<h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/Destructuring%20Assignment/study.md">구조분해할당과 Spread연산자(...)</a></h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/shallow-deep%20Copy/copy_rest-parameter_.md">중첩 객체에서의 깊은 복사 & Rest Parameter & 구조분해할당 활용</a></h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/DOM/DOM%2C%20Methods-summary.md">객체 값으로 DOM 활용 & Attribute Method & Interval Method</a></h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/JavaScript/JSON_study/JSON%26XML.md">JSON 소개 & JavaScript에서의 사용</a></h4>
@@ -45,4 +44,7 @@ https://github.com/Kwon2do/TIL/blob/main/JavaScript/Destructuring%20Assignment/s
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/Web3.0%26BlockChain/Web3.js_.md">블록체인(Block Chain) 통신 과정</a></h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/Web3.0%26BlockChain/Web3.js_.md">Web3.js 정의 및 기능</a></h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/Web3.0%26BlockChain/Web3.js_2.md">Web3.js 사용을 위한 개념 설명(npm, web3 provider, infura, metamask)</a></h4>
+
+<li><h3>React</h3>
+<h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/01-react-nextjs-getting-started.md">React와 Next.js 초기 설정 및 소개</h4>
 </ul>
