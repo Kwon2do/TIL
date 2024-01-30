@@ -47,4 +47,5 @@
 
 <li><h3>React</h3>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/01-react-nextjs-getting-started.md">React와 Next.js 초기 설정 및 소개</h4>
+<h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/02-react-component.md">JSX, CSS-IN-JS 개념 학습 및 응용실습 & React Component</h4>
 </ul>
