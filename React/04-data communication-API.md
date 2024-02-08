@@ -139,3 +139,181 @@ API는 크게 4가지 방식으로 구분할 수 있습니다.
 **`API명세서는 Back-end 개발자에게 받는 것.`** Back-end 개발자는 자신이 만든 API를 직접 문서 형태로 작성하거나, **swagger** 라는 프로그램을 설치해서 만듭니다.
 
 <img src="./images/04/API실습.png">
+
+---
+
+<h1 style="background-color:powderblue;color:yellow">grqphql API 사용 연습하기(with playground)</h1>
+
+1) `createBoard를 활용해, 게시물을 하나 등록해 주세요.`<br>
+```javascript
+mutation {
+  createBoard(
+createBoardInput: {writer:"KDH", password:"1234", title:
+"첫번째 게시물", contents:"KDH내용입니다."}
+  ){
+    _id
+    writer
+    title
+    contents
+    likeCount
+    dislikeCount
+  }
+}
+```
+2) `등록한 게시글의 제목과 내용은 무엇인가요?`
+```javascript
+query {
+  fetchBoard(boardId:"65c4b5a2bfc0f900299a8ef0"){
+    title
+    contents
+  }
+}
+```
+3) `등록한 게시글에 좋아요를 1 올려주세요.`
+```javascript
+mutation {
+  likeBoard(boardId:"65c4b5a2bfc0f900299a8ef0")
+}
+```
+
+4) `등록한 게시글에 싫어요도 1 올려주세요.`
+```javascript
+mutation {
+  dislikeBoard(boardId:"65c4b5a2bfc0f900299a8ef0")
+}
+```
+
+5) `등록한 게시글의 좋아요와 싫어요는 각각 몇 개 인가요? (fetchBoard를 활용해서 확인해 보세요.)`
+```javascript
+query {
+  fetchBoard(boardId:"65c4b5a2bfc0f900299a8ef0"){
+    likeCount
+    dislikeCount
+  }
+}
+```
+6) `현재 등록된 게시글의 총 갯수는 몇 개 인가요? (어떤 API를 활용하면 좋을지 찾아보세요!)`
+```javascript
+query {
+  fetchBoardsCount
+}
+```
+7) `등록한 게시글의 제목을 수정해 보세요!`
+```javascript
+mutation {
+	updateBoard(boardId:"65c4b5a2bfc0f900299a8ef0", password:"1234", updateBoardInput:{
+    title:"제목 수정했습니다."
+  }){
+    writer
+    title
+    contents
+  }
+}
+```
+8) `fetchBoards 전체 게시물 조회를 활용하여 방금 쓴 게시물을 검색해 보세요.(search 변수를 활용해요!)`
+```javascript
+query{
+  fetchBoards(search:"제목 수정했습니다."){
+    writer
+    title
+  }
+}
+```
+9) `등록한 게시글에 댓글을 3개 추가해 보세요.`
+```javascript
+mutation {
+  createBoardComment(boardId:"65c4b5a2bfc0f900299a8ef0",
+    createBoardCommentInput:{
+      writer:"KDH"
+      password:"1234"
+    	contents:"댓글 3번째!"
+      rating:1.5
+    }){
+     _id
+    writer
+    contents
+    createdAt
+    }
+}
+```
+10) `첫번째 댓글의 내용을 수정해 보세요!`
+1. **첫 번째 댓글 id 확인**
+```javascript
+query {
+  fetchBoardComments(page:1, boardId:"65c4b5a2bfc0f900299a8ef0"){
+    _id
+    contents
+  }
+}
+```
+2. **수정하기**
+```javascript
+mutation{
+  updateBoardComment(
+    updateBoardCommentInput:{
+      contents:"첫 번째 댓글 수정하겠습니다."
+    }
+    boardCommentId:"65c4e759bfc0f900299a8ef1",
+    password:"1234"){
+    _id
+    writer
+    contents
+    createdAt
+    updatedAt 
+  }
+}
+```
+11) `두번째 댓글을 삭제해 보세요!`
+**10번과 마찬가지로, 2번째 게시물 id 조회 후 수정**
+```javascript
+mutation{
+  updateBoardComment(
+    updateBoardCommentInput:{
+      contents:"두 번째 댓글 수정하겠습니다."
+    }
+    boardCommentId:"65c4e759bfc0f900299a8ef2",
+    password:"1234"){
+    _id
+    writer
+    contents
+    createdAt
+    updatedAt
+  }
+}
+```
+12) `등록한 게시글에 달려있는 모든 댓글을 조회해 보세요.(작성자와 내용만 조회합니다.)`
+```javascript
+query {
+  fetchBoardComments(page:1, boardId:"65c4b5a2bfc0f900299a8ef0"){
+    _id
+    contents
+  }
+}
+```
+13) `BEST게시글을 조회해 보세요! (API 이름을 잘 찾아보세요!)`
+```javascript
+query {
+  fetchBoardsOfTheBest{
+    _id
+    writer
+    title
+    contents
+    likeCount
+    dislikeCount
+    createdAt
+  }
+}
+```
+14) `회원가입을 해보세요! 사용자, 즉 User를 만드는 API입니다!`
+```javascript
+mutation {
+  createUser(createUserInput:{
+    email:"naver@naver.com", password:"1234",name:"kdh"}
+  ){
+    _id
+    email
+    name
+    createdAt
+  }
+}
+```
