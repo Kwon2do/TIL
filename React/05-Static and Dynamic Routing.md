@@ -140,3 +140,113 @@ router.push("/section05/05-05-dynamic-routing-board-mutation-moved/"+result.data
 //백틱(``)으로 감싸면 ${}를 사용해서 변수를 포함시킬 수 있다. (가독성 향상)
 router.push(`/section05/05-05-dynamic-routing-board-mutation-moved${result.data.createBoard.number}`)
 ~~~
+
+## graphql 데이터 통신 및 Routing
+
+### _app.js 파일
+react에서는 해당 _app.js 파일을 불러와서 페이지를 구성한다.
+하지만, 항상 다른 js파일에 페이지를 구성 할 코드를 작성하는데 어떻게 불러와지는 건지 궁금했다.
+_app.js파일의 return 영역에 가면 해답을 찾을 수 있다.
+~~~javascript
+  return (
+      <Component {...pageProps} />
+  )
+~~~
+이 Component 부분에 우리가 읽어올 js파일(페이지 내용)이 삽입되는 것이다.
+한마디로, `<Component {...pageProps} />` 위에 작성하는 것들은 모든 페이지의 공통 부분이 되는 것이다.
+~~~javascript
+  return (
+      <div>공통부분시작<div>
+      <Component {...pageProps} />
+	  <div>공통부분끝<div>
+  )
+~~~
+
+### graphql 데이터통신
+
+graphql를 활용한 데이터 통신을 공부하면서 ApolloClient 셋팅, Hook 사용 등이 익숙하지 않아서 헷갈렸다.
+
+#### _app.js에서 ApolloClient Setting
+~~~javascript
+  const client = new ApolloClient({
+    uri: "API주소",
+    cache: new InMemoryCache()
+  })
+  
+  return (
+    <ApolloProvider client={client}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  )
+~~~
+
+#### graphql Setting
+~~~javascript
+const CREATE_BOARD = gql`
+  mutation createBoard($createBoardInput: CreateBoardInput!){
+    createBoard(createBoardInput: $createBoardInput){
+      _id
+    }
+  }
+`
+~~~
+
+백엔드 개발자가 만들어놓은 createBoard API 메서드를 호출하기 위해 위와 같은 graphql setting이 필요하다.<br>
+`mutation createBoard($createBoardInput: CreateBoardInput!)`
+인수로 어떤 데이터를 전달받을 것인지에 대한 설명이 적혀있고,  `createBoard(createBoardInput: $createBoardInput) {
+	_id }`
+생성한 게시물의 id를 받아온다(return)
+
+### 동적 라우팅(dynamic routing)
+
+![](https://velog.velcdn.com/images/dovelop/post/52d5d718-65ea-469b-be6d-f2ac00b1ccec/image.png)
+
+동적 라우팅이라는 개념은 그냥 단순하게 말해서
+**하나의 템플릿으로 여러 데이터를 효율적으로 표시하는 것**이다.
+미리 정해둔 양식에 받아온 데이터를 채워넣는 식이다.
+~~~javascript
+router.push(`/boards/${result.data.createBoard._id}`);
+~~~
+위와 같이 작성해서, 페이지를 이동한다.
+사진에서 보이는 [boadrId] 폴더는 일반 폴더가 아니라 변수다.
+정확히 말하면 경로가 변수다.
+우리는 boards폴더 안에 [boardId]라는 변수 폴더를 생성해놨다.
+
+만약 위 코드처럼 작성하면 변수 폴더 [boardId]는 result.data.createBoard._id 값을 반영하게 되는 것.
+
+http://localhost:3000/boards/boardId 와 같은 식의 주소로 연결되는 것이다.
+
+그렇다면, 이동된 페이지에서는 무엇을 처리할 수 있을까?
+등록한 게시물의 id를 기억하고 있다(boardId)
+따라서, 게시물 id를 이용해서 제목,내용,작성자 등의 데이터를 요청하여 받아올 수 있다.
+
+~~~javascript
+export const FETCH_BOARD = gql`
+  query fetchBoard($boardId: ID!) {
+    fetchBoard(boardId: $boardId) {
+      _id
+      writer
+      title
+      contents
+      createdAt
+    }
+  }
+`;
+
+export default function BoardDetailPage() {
+  const router = useRouter()
+
+  const { data } = useQuery(FETCH_BOARD, {
+    variables: { boardId: router.query.boardId },
+  });
+~~~
+
+위 코드를 살펴보면, FETCH_BOARD gql 셋팅 안에 fetchBoard 메서드를 정의하고, 인수로 boardId를 전달 받아야한다.
+
+`router.query.boardId`
+현재 주소에서 boardId를 떼서 받아오는 것.
+
+참고로, useMutation , useState 등은 대괄호로 표현을 했는데
+useQuery는 중괄호이고, 매개변수는 반드시 data이다. (요청한 데이터가 저장됨)
+
+---
