@@ -49,5 +49,5 @@
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/01-react-nextjs-getting-started.md">React와 Next.js 초기 설정 및 소개</h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/02-react-component.md">JSX, CSS-IN-JS 개념 학습 및 응용실습 & React Component</h4> 
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/03-react-state.md">React Component State 변수에 대하여(state, setState, useState)</h4>
-<h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/04-data%20communication-API.md">데이터 통신 구조와 API(rest api, graphql) 이해 + graphql 연습(with playground)</h4>
+<h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/04-data%20communication-API.md">데이터 통신 구조와 API(rest api, graphql) 이해 + graphql 연습(with playground) + 동적 라우팅</h4>
 </ul>
