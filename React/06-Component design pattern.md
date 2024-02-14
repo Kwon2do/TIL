@@ -57,6 +57,28 @@ props = {
 
 그러면 JSX 컴포넌트는 props를 인수로 받고, props 객체 접근을 통해 JS컴포넌트에서 전달해준 데이터를 사용할 수 있게 되는 것이다.
 
+~~~html
+<input type="text">
+~~~
+위 코드에서 보이는 type="text"도 마찬가지로 props로 들어가는 것이다.<br>
+`(type이 key, text가 value)`
+
+~~~javascript
+//JSX
+<RedInput type="text" onChange={props.writer}
+aaa="TEST"/>
+
+//Emotion
+import styled from '@emotion/styled'
+export const RedInput = styled.input`
+    border-color:red;
+    ${(props) => props.aaa}
+`
+~~~
+위 코드는 emotion에서의 예시이다.
+`${(props) => props.aaa}`
+styles 파일에서는 함수가 존재하지 않는데, 이런 경우 직접 함수를 작성해서 인자로 props를 받아올 수 있다.(특이한 경우다)
+
 여기서 JS 컴포넌트는 부모 컴포넌트, JSX 컴포넌트는 자식 컴포넌트가 되는 것이고, 리액트는 **데이터 흐름이 단방향 구조**이다.
 
 데이터 흐름이 단방향 구조라는 것은 **props는 부모가 자식에게만 줄 수 있으며**, **자식이 부모에게 줄 수 없다는 것**을 의미한다.
