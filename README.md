@@ -5,8 +5,6 @@
 
 더 많은 공유를 원하는 기록은 <a href="https://velog.io/@dovelop/">개인 블로그</a>에서 추가적으로 포스팅하고 있습니다.
 
-⭐**2024.01.28일 기준으로 보다 직관적으로 지난 학습 내용들을 파악하기 위하여 TIL Repository 구조를 전면 개편하였습니다.**
-
 ---
 
 <h1>분류</h1>
@@ -50,4 +48,8 @@
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/02-react-component.md">JSX, CSS-IN-JS 개념 학습 및 응용실습 & React Component</h4> 
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/03-react-state.md">React Component State 변수에 대하여(state, setState, useState)</h4>
 <h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/04-data%20communication-API.md">데이터 통신 구조와 API(rest api, graphql) 이해 + graphql 연습(with playground) + 동적 라우팅</h4>
+<h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/06-Component%20design%20pattern.md">컴포넌트 디자인 패턴(container-presenter, atomic)과 props 활용</h4>
+<h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/07-using%20map%20for%20rendering.md">useState 동작 원리, map을 사용한 rendering</h4>
+<h4><a href="https://github.com/Kwon2do/TIL/blob/main/React/08.Typescript%20and%20graphql-codegen.md">Typescript란 무엇인가 (with graphql-codegen, utility type)</h4>
+
 </ul>
